@@ -1,39 +1,69 @@
-.App {
-  text-align: center;
+:root {
+  --white-color: #fff;
+  --pink-color: #e33177;
+  --blue-color: #3453a3;
+  --gray-color: #959595;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-logo {
+  width: 30%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-section {
+  width: 70%;
+  margin: 25% auto auto auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-login {
+  width: 90%;
+  padding: 5%;
+  margin-top: 30px;
+  background-color: var(--pink-color);
+  border-radius: 4px;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.login-header {
+  color: var(--white-color);
+  font-size: 1em;
+  text-align: center;
+  font-weight: 400;
+  text-transform: lowercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.form-section input {
+  width: 90%;
+  margin: 10px auto;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: var(--gray-color);
+  padding-left: 5%;
+  padding-right: 5%;
+  outline: none;
+  font-size: 15px;
+}
+
+.form-section button {
+  height: 35px;
+  width: 40%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
 }

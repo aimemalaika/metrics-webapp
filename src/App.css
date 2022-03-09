@@ -27,7 +27,7 @@ body {
 .form-login {
   width: 90%;
   padding: 5%;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: var(--pink-color);
   border-radius: 4px;
   height: 40vh;

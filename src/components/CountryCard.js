@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 class CountryCard extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class CountryCard extends Component {
     const { name } = this.props;
     return (
       <div className={name}>
-        <FontAwesomeIcon className="go-to-page" icon={faArrowCircleRight} />
+        <Link to="/details"><FontAwesomeIcon className="go-to-page" icon={faArrowCircleRight} /></Link>
         <p>Rwanda</p>
         <p>20-03-2022</p>
         <p>John Hopkins University</p>

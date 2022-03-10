@@ -13,6 +13,10 @@ body {
   background-color: black;
 }
 
+a {
+  color: inherit;
+}
+
 .app-logo {
   width: 30%;
 }
@@ -165,4 +169,17 @@ body {
   color: var(--white-color);
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.graph-section {
+  padding: 20px 5px;
+  background-color: var(--pink-color);
+}
+
+.text-paragraph {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  color: var(--white-color);
+  padding: 0 10px;
 }

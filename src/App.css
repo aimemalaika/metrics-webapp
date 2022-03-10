@@ -1,5 +1,6 @@
 :root {
   --white-color: #fff;
+  --pinker-color: #c22a64;
   --pink-color: #e33177;
   --blue-color: #3453a3;
   --gray-color: #959595;
@@ -66,4 +67,102 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   border: none;
+}
+
+.app-header {
+  color: #fff;
+  background-color: var(--pinker-color);
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  list-style-type: none;
+  padding: 0 30px;
+  box-shadow: 0 10px 11px -4px var(--pinker-color);
+}
+
+.app-header li {
+  cursor: pointer;
+}
+
+.app-header li:last-child {
+  text-align: right;
+}
+
+.app-header li:last-child .icons {
+  padding-left: 10px;
+}
+
+.page-title {
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.big-first-country {
+  background-color: var(--pink-color);
+  padding: 20px 15px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.big-first-country .go-to-page {
+  float: right;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.big-first-country .item {
+  clear: both;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.big-first-country img {
+  width: 100%;
+  margin-top: -20px;
+}
+
+.big-first-country .data-sets {
+  text-align: right;
+}
+
+.big-first-country .data-sets .country {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.listed-countrises {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.small-card-country {
+  color: var(--white-color);
+  padding: 20px 15px;
+  cursor: pointer;
+  width: calc(50% - 30px);
+  text-align: right;
+}
+
+.pink {
+  background-color: #cc2a6b;
+  box-shadow: 0 10px 11px -4px #cc2a6b;
+}
+
+.pinker {
+  background-color: #a22555;
+  box-shadow: 0 10px 11px -4px #a22555;
+}
+
+.titles-paragraph {
+  background-color: #371020;
+  box-shadow: 0 10px 11px -4px #371020;
+  margin: 0;
+  padding: 5px 10px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-weight: 700;
 }

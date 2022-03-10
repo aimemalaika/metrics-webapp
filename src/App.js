@@ -3,6 +3,7 @@ import Login from './components/Login';
 import Countries from './components/Countries';
 import '@fontsource/lato';
 import './App.css';
+import CountryDetails from './components/CountryDetails';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Login />} />
         <Route path="/countries" exact element={<Countries />} />
+        <Route path="/details" exact element={<CountryDetails />} />
       </Routes>
     </Router>
   );

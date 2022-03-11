@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faCog, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   constructor() {
@@ -9,11 +11,14 @@ class Header extends Component {
   }
 
   render() {
+    const { content, pth } = this.props;
     return (
       <ul className="app-header">
         <li>
-          <FontAwesomeIcon icon={faAngleLeft} />
-          <span className="page-title">Statistic by country</span>
+          <Link to={pth}>
+            <FontAwesomeIcon icon={faAngleLeft} />
+            <span className="page-title">{content}</span>
+          </Link>
         </li>
         <li>
           <FontAwesomeIcon className="icons" icon={faMicrophone} />
@@ -24,4 +29,8 @@ class Header extends Component {
   }
 }
 
+Header.propTypes = {
+  content: PropTypes.string.isRequired,
+  pth: PropTypes.string.isRequired,
+};
 export default Header;

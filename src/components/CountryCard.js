@@ -12,9 +12,9 @@ class CountryCard extends Component {
 
   render() {
     const {
-      classname, country, date, source, cid,
+      classname, country, date, source, countId,
     } = this.props;
-    const pathname = `/details/${cid}`;
+    const pathname = `/details/${countId}`;
     return (
       <Link to={pathname} className={classname}>
         <div>
@@ -33,7 +33,7 @@ CountryCard.propTypes = {
   date: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
-  cid: PropTypes.string.isRequired,
+  countId: PropTypes.string.isRequired,
 };
 
 export default CountryCard;

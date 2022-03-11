@@ -126,7 +126,6 @@ a {
 
 .big-first-country img {
   width: 100%;
-  margin-top: -20px;
 }
 
 .big-first-country .data-sets {
@@ -178,7 +177,7 @@ a {
 
 .graph-section {
   padding: 20px 5px;
-  background-color: var(--pink-color);
+  background-color: #0f0000;
 }
 
 .text-paragraph {
@@ -187,4 +186,10 @@ a {
   margin: 0;
   color: var(--white-color);
   padding: 0 10px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.text-paragraph span {
+  float: right;
 }

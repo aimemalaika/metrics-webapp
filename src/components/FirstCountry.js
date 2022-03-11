@@ -1,35 +1,33 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
-import Flag from '../image/rwanda.png';
+import { useState } from 'react';
+import tickTack from './updateTime';
 
-class FirstCountry extends Component {
-  constructor() {
-    super();
-    this.state = { };
-  }
-
-  render() {
-    const { timing } = this.props;
-    return (
-      <div className="big-first-country">
-        <FontAwesomeIcon className="go-to-page" icon={faArrowCircleRight} />
-        <div className="item">
-          <img src={Flag} alt="rwanda Flag" />
-          <div className="data-sets">
-            <h2 className="country">Made in Rwanda</h2>
-            <p>{timing}</p>
-            <p>Made by Aime Malaika</p>
-          </div>
+const FirstCountry = (props) => {
+  const {
+    flag, title, source,
+  } = props;
+  const [timer, setTimer] = useState('');
+  setInterval(() => {
+    setTimer(tickTack);
+  }, 1000);
+  return (
+    <div className="big-first-country">
+      <div className="item">
+        <img src={flag} alt="rwanda Flag" />
+        <div className="data-sets">
+          <h2 className="country">{title}</h2>
+          <p>{timer}</p>
+          <p>{source}</p>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 FirstCountry.propTypes = {
-  timing: PropTypes.string.isRequired,
+  flag: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
 };
 
 export default FirstCountry;

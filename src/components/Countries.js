@@ -1,20 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FirstCountry from './FirstCountry';
 import Header from './Header';
 import CountryCard from './CountryCard';
-import tickTack from './updateTime';
+import Flag from '../image/rwanda.png';
 import { FetchCountries } from '../redux/countries/countries';
 
 const Countries = () => {
-  const [timer, setTimer] = useState('');
-  const isMounted = true;
-
-  if (isMounted) {
-    setInterval(() => {
-      setTimer(tickTack);
-    }, 1000);
-  }
   const countries = useSelector((state) => state.countryStatsReducer);
 
   const dispatch = useDispatch();
@@ -37,7 +29,7 @@ const Countries = () => {
   return (
     <>
       <Header pth="/" content="countries list" />
-      <FirstCountry timing={timer} />
+      <FirstCountry title="Made in Rwanda" source="Developed by Aime" flag={Flag} />
       <p className="titles-paragraph">Stats By Countries</p>
       <div className="listed-countrises">
         {countriesDiv}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 import { Chart, registerables } from 'chart.js';
 
 Chart.register(...registerables);
@@ -11,28 +12,20 @@ class DataGraph extends Component {
   }
 
   render() {
+    const { dataperiod, figures } = this.props;
     const data = {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-      datasets: [
-        {
-          label: 'First dataset',
-          data: [33, 53, 85, 41, 44, 65],
-          fill: true,
-          backgroundColor: 'rgba(75,192,192,0.2)',
-          borderColor: 'rgba(75,192,192,1)',
-        },
-        {
-          label: 'Second dataset',
-          data: [33, 25, 35, 51, 54, 76],
-          fill: false,
-          borderColor: '#742774',
-        },
-      ],
+      labels: dataperiod.split(','),
+      datasets: JSON.parse(figures),
     };
     return (
       <Line data={data} />
     );
   }
 }
+
+DataGraph.propTypes = {
+  dataperiod: PropTypes.string.isRequired,
+  figures: PropTypes.string.isRequired,
+};
 
 export default DataGraph;

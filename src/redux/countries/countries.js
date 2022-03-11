@@ -1,7 +1,7 @@
 const GET_COUNTRIES_STATS = 'metrics-webapp/countries/GET_COUNTRIES_STATS';
 const initialState = [];
-const END_POINT = 'https://api.covid19tracking.narrativa.com/api/';
-export const TODAY_DATE = new Date().toISOString().slice(0, 10);
+const END_POINT = 'https://api.covid19tracking.narrativa.com/api';
+const TODAY_DATE = new Date().toISOString().slice(0, 10);
 
 export const FetchCountries = () => async (dispatch) => {
   const request = await fetch(`${END_POINT}/${TODAY_DATE}`);

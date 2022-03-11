@@ -1,28 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FirstCountry from './FirstCountry';
 import Header from './Header';
 import CountryCard from './CountryCard';
 import Flag from '../image/rwanda.png';
 import { FetchCountries } from '../redux/countries/countries';
+import PageLoader from './PageLoader';
 
 const Countries = () => {
-  const countries = useSelector((state) => state.countryStatsReducer);
-
+  const [loading, setLoading] = useState('animate-load');
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(FetchCountries());
+  useEffect(async () => {
+    await dispatch(FetchCountries());
+    await setLoading('animate-load hidden');
   }, []);
-  const countriesDiv = countries.map(({
+  const countries = useSelector((state) => state.countryStatsReducer);
+  const start = 0;
+  const limit = 50;
+  const countriesDiv = countries.slice(start, limit).map(({
     id, date, name, source, classname,
   }) => (
     <CountryCard
       key={id}
-      cid={id}
       classname={classname}
       date={date}
       country={name}
       source={source}
+      countId={id}
     />
   ));
 
@@ -34,6 +38,7 @@ const Countries = () => {
       <div className="listed-countrises">
         {countriesDiv}
       </div>
+      <PageLoader loading={loading} />
     </>
   );
 };

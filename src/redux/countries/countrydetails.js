@@ -1,9 +1,7 @@
-import { TODAY_DATE } from './countries';
-
 const GET_COUNTRIES_DET = 'metrics-webapp/countries/GET_COUNTRIES_DET';
-const initialState = [];
+const initialState = { labels: [], data: {}, countryInfo: {} };
 const END_POINT = 'https://api.covid19tracking.narrativa.com/api/country';
-
+const TODAY_DATE = new Date().toISOString().slice(0, 10);
 const date = new Date();
 date.setDate(date.getDate() - 5);
 const WEEK_DATE = date.toISOString().slice(0, 10);

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import tickTack from './updateTime';
 
 const FirstCountry = (props) => {
@@ -7,9 +7,12 @@ const FirstCountry = (props) => {
     flag, title, source,
   } = props;
   const [timer, setTimer] = useState('');
-  setInterval(() => {
+  const interval = setInterval(() => {
     setTimer(tickTack);
   }, 1000);
+  useEffect(() => () => {
+    clearInterval(interval);
+  }, []);
   return (
     <div className="big-first-country">
       <div className="item">

@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Login />} />
         <Route path="/countries" exact element={<Countries />} />
-        <Route path="/details" exact element={<CountryDetails />} />
+        <Route path="/details/:countryId" exact element={<CountryDetails />} />
       </Routes>
     </Router>
   );

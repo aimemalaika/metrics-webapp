@@ -11,20 +11,29 @@ class CountryCard extends Component {
   }
 
   render() {
-    const { name } = this.props;
+    const {
+      classname, country, date, source, cid,
+    } = this.props;
+    const pathname = `/details/${cid}`;
     return (
-      <div className={name}>
-        <Link to="/details"><FontAwesomeIcon className="go-to-page" icon={faArrowCircleRight} /></Link>
-        <p>Rwanda</p>
-        <p>20-03-2022</p>
-        <p>John Hopkins University</p>
-      </div>
+      <Link to={pathname} className={classname}>
+        <div>
+          <FontAwesomeIcon className="go-to-page" icon={faArrowCircleRight} />
+          <p>{country}</p>
+          <p>{date}</p>
+          <p>{source}</p>
+        </div>
+      </Link>
     );
   }
 }
 
 CountryCard.propTypes = {
-  name: PropTypes.string.isRequired,
+  classname: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  cid: PropTypes.string.isRequired,
 };
 
 export default CountryCard;

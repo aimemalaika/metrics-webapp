@@ -1,9 +1,16 @@
 const GET_COUNTRIES_STATS = 'metrics-webapp/countries/GET_COUNTRIES_STATS';
+const GET_FILTERED_COUNTRIES_STATS = 'metrics-webapp/countries/GET_FILTERED_COUNTRIES_STATS';
 const initialState = [];
 const END_POINT = 'https://api.covid19tracking.narrativa.com/api';
 const TODAY_DATE = new Date().toISOString().slice(0, 10);
 
-export const FetchCountries = () => async (dispatch) => {
+export const GetSerched = (data, filter) => ({
+  type: GET_FILTERED_COUNTRIES_STATS,
+  payload: { data, filter },
+}
+);
+
+export const FetchCountries = (filters = null) => async (dispatch) => {
   const request = await fetch(`${END_POINT}/${TODAY_DATE}`);
   if (request.status === 200) {
     const response = await request.json();
@@ -40,16 +47,23 @@ export const FetchCountries = () => async (dispatch) => {
         counter += 1;
       });
     });
-    dispatch({
-      type: GET_COUNTRIES_STATS,
-      payload,
-    });
+    if (filters === null) {
+      dispatch({
+        type: GET_COUNTRIES_STATS,
+        payload,
+      });
+    } else {
+      dispatch(GetSerched(payload, filters));
+    }
   }
 };
 
 const countryStatsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_COUNTRIES_STATS: return action.payload;
+    case GET_FILTERED_COUNTRIES_STATS:
+      return action.payload.data.filter((count) => (
+        count.name.toLocaleLowerCase().indexOf(action.payload.filter.toLocaleLowerCase()) > -1));
     default: return state;
   }
 };

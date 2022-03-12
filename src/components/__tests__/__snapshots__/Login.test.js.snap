@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the Country list Country section renders correctly 1`] = `
+<div
+  className="form-section"
+>
+  <div
+    className="Toastify"
+  />
+  <div
+    className="Toastify"
+  />
+  <img
+    alt="logo"
+    className="app-logo"
+    src="logo.png"
+  />
+  <form
+    className="form-login"
+  >
+    <p
+      className="login-header"
+    >
+      Login to access data
+    </p>
+    <input
+      onChange={[Function]}
+      placeholder="username"
+      required={true}
+      type="text"
+      value="aimemalaika"
+    />
+    <input
+      onChange={[Function]}
+      placeholder="password"
+      required={true}
+      type="password"
+      value="aimemalaika"
+    />
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Sign In
+    </button>
+  </form>
+  <div
+    className="animate-load"
+  >
+    <svg
+      className="spinner"
+      fill="currentColor"
+      height="1em"
+      icon="spinner"
+      stroke="currentColor"
+      strokeWidth="0"
+      style={
+        Object {
+          "color": undefined,
+        }
+      }
+      viewBox="0 0 512 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"
+      />
+    </svg>
+    Loading ...
+  </div>
+</div>
+`;

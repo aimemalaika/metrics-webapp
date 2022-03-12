@@ -15,9 +15,7 @@ const Countries = () => {
     await setLoading('animate-load hidden');
   }, []);
   const countries = useSelector((state) => state.countryStatsReducer);
-  const start = 0;
-  const limit = 50;
-  const countriesDiv = countries.slice(start, limit).map(({
+  const countriesDiv = countries.map(({
     id, date, name, source, classname,
   }) => (
     <CountryCard
@@ -30,11 +28,20 @@ const Countries = () => {
     />
   ));
 
+  const filterByName = async (value) => {
+    if (value === '') {
+      await dispatch(FetchCountries());
+    } else {
+      await dispatch(FetchCountries(value));
+    }
+  };
+
   return (
     <>
       <Header pth="/" content="countries list" />
       <FirstCountry title="Made in Rwanda" source="Developed by Aime" flag={Flag} />
       <p className="titles-paragraph">Stats By Countries</p>
+      <input className="search-bar" onChange={(e) => filterByName(e.target.value)} type="text" placeholder="Enter key search ..." />
       <div className="listed-countrises">
         {countriesDiv}
       </div>

@@ -226,3 +226,10 @@ a {
 .hidden {
   display: none;
 }
+
+.search-bar {
+  width: 76%;
+  margin: 3% 10%;
+  height: 30px;
+  text-align: center;
+}

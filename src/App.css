@@ -1,34 +1,219 @@
-.App {
-  text-align: center;
+:root {
+  --white-color: #fff;
+  --pinker-color: #c22a64;
+  --pink-color: #e33177;
+  --blue-color: #3453a3;
+  --gray-color: #959595;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-logo {
+  width: 30%;
+}
+
+.form-section {
+  width: 70%;
+  margin: 25% auto auto auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-login {
+  width: 90%;
+  padding: 5%;
+  margin-top: 30px;
+  background-color: var(--pink-color);
+  border-radius: 4px;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
+.login-header {
+  color: var(--white-color);
+  font-size: 1em;
+  text-align: center;
+  font-weight: 400;
+  text-transform: lowercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-section input {
+  width: 90%;
+  margin: 10px auto;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  color: var(--gray-color);
+  padding-left: 5%;
+  padding-right: 5%;
+  outline: none;
+  font-size: 15px;
+}
+
+.form-section button {
+  height: 35px;
+  width: 40%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: none;
+}
+
+.app-header {
+  color: #fff;
+  background-color: var(--pinker-color);
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  list-style-type: none;
+  padding: 0 30px;
+  box-shadow: 0 10px 11px -4px var(--pinker-color);
+}
+
+.app-header li {
+  cursor: pointer;
+}
+
+.app-header li:last-child {
+  text-align: right;
+}
+
+.app-header li:last-child .icons {
+  padding-left: 10px;
+}
+
+.page-title {
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.big-first-country {
+  background-color: var(--pink-color);
+  padding: 20px 15px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.big-first-country .go-to-page {
+  float: right;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.big-first-country .item {
+  clear: both;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.big-first-country img {
+  width: 100%;
+}
+
+.big-first-country .data-sets {
+  text-align: right;
+}
+
+.big-first-country .data-sets .country {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.listed-countrises {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.small-card-country {
+  color: var(--white-color);
+  cursor: pointer;
+  text-align: right;
+  width: 50%;
+}
+
+.small-card-country div {
+  padding: 20px 15px;
+}
+
+.pink {
+  background-color: #cc2a6b;
+  box-shadow: 0 10px 11px -4px #cc2a6b;
+}
+
+.pinker {
+  background-color: #a22555;
+  box-shadow: 0 10px 11px -4px #a22555;
+}
+
+.titles-paragraph {
+  background-color: #371020;
+  box-shadow: 0 10px 11px -4px #371020;
+  margin: 0;
+  padding: 5px 10px;
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.graph-section {
+  padding: 20px 5px;
+  background-color: #0f0000;
+}
+
+.text-paragraph {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  color: var(--white-color);
+  padding: 0 10px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.text-paragraph span {
+  float: right;
+}
+
+.animate-load {
+  position: fixed;
+  color: var(--pinker-color);
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  font-size: 1em;
+  background-color: #0f0000c0;
+  padding-top: 85vh;
+  overflow: hidden;
+}
+
+.spinner {
+  animation: spin infinite 2s linear;
+  font-size: 1em;
+  margin: 0 10px;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,4 +221,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.search-bar {
+  width: 76%;
+  margin: 3% 10%;
+  height: 30px;
+  text-align: center;
+}
+
+.search-fail {
+  width: 100%;
+  text-align: center;
+  color: var(--pinker-color);
+  font-size: 1.5em;
+}
+
+.info-circle {
+  color: var(--pinker-color);
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+  margin-top: 18%;
 }

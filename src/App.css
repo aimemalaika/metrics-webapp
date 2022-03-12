@@ -233,3 +233,18 @@ a {
   height: 30px;
   text-align: center;
 }
+
+.search-fail {
+  width: 100%;
+  text-align: center;
+  color: var(--pinker-color);
+  font-size: 1.5em;
+}
+
+.info-circle {
+  color: var(--pinker-color);
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+  margin-top: 18%;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { FaInfoCircle } from 'react-icons/fa';
 import FirstCountry from './FirstCountry';
 import Header from './Header';
 import CountryCard from './CountryCard';
@@ -42,9 +43,18 @@ const Countries = () => {
       <FirstCountry title="Made in Rwanda" source="Developed by Aime" flag={Flag} />
       <p className="titles-paragraph">Stats By Countries</p>
       <input className="search-bar" onChange={(e) => filterByName(e.target.value)} type="text" placeholder="Enter key search ..." />
-      <div className="listed-countrises">
-        {countriesDiv}
-      </div>
+      {countries.length
+        ? (
+          <div className="listed-countrises">
+            { countriesDiv }
+          </div>
+        )
+        : (
+          <div className="listed-countrises">
+            <FaInfoCircle icon="info-circle" className="info-circle" />
+            <p className="search-fail">No Data Found matching your search</p>
+          </div>
+        )}
       <PageLoader loading={loading} />
     </>
   );

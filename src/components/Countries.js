@@ -43,7 +43,7 @@ const Countries = () => {
       <FirstCountry title="Made in Rwanda" source="Developed by Aime" flag={Flag} />
       <p className="titles-paragraph">Stats By Countries</p>
       <input className="search-bar" onChange={(e) => filterByName(e.target.value)} type="text" placeholder="Enter key search ..." />
-      {countries.length
+      {countries.length || loading === 'animate-load'
         ? (
           <div className="listed-countrises">
             { countriesDiv }

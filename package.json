@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject",
     "check-linters": "npx eslint . --fix && npx stylelint **/*.{css,scss}",
     "deploy": "netlify deploy --prod --dir=build"

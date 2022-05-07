@@ -16,7 +16,7 @@ export const FetchCountries = (filters = null) => async (dispatch) => {
     const response = await request.json();
     const payload = [];
     Object.keys(response.dates).forEach((ident) => {
-      let counter = 1;
+      let counter = 3;
       let classname;
       let doubleOdd = null;
       Object.keys(response.dates[ident].countries).forEach((key) => {
